@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>InnovativeElectronics — Get a Quote</title>
+<!-- Google tag (Google Ads). Replace AW-XXXXXXXXXX with your Google Ads ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXXX');
+</script>
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --card:#0f0f10;
+    --gold:#d4af37;
+    --muted:#cfcfcf;
+    --accent:#ffd97a;
+    --radius:14px;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%);color:var(--muted);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+  header{display:flex;align-items:center;gap:14px}
+  .logo{
+    background:linear-gradient(180deg,var(--gold),#b98e2d);
+    width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#070707;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,.6)
+  }
+  h1{margin:0;font-size:22px;color:white}
+  p.lead{margin:6px 0 0;color:#cfcfcf;opacity:.92}
+  main{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:18px}
+  .hero{padding:20px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 22px rgba(0,0,0,.6)}
+  .hero .benefits{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .chip{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.03)}
+  .form-card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.6);position:sticky;top:22px}
+  label{display:block;margin:10px 0 6px;font-size:13px;color:#ddd}
+  input[type=text], input[type=tel], input[type=email], textarea{
+    width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.06);background:transparent;color:var(--muted);
+  }
+  .row{display:flex;gap:10px}
+  .row > *{flex:1}
+  .btn{
+    display:inline-block;padding:12px 16px;border-radius:10px;background:linear-gradient(90deg,var(--gold),#c79b3a);color:#050505;font-weight:700;border:none;cursor:pointer;margin-top:12px;width:100%;
+    box-shadow:0 8px 20px rgba(212,175,55,.12);
+  }
+  .muted{color:#b8b8b8;font-size:13px}
+  footer{margin-top:18px;color:#9b9b9b;font-size:13px}
+  .small{font-size:12px;color:#bdbdbd}
+  .status{margin-top:12px;padding:12px;border-radius:10px;display:none;font-weight:700;}
+  .status.success{background:linear-gradient(90deg,#0a662a, #0b8b46);color:white;}
+  .status.error{background:#8b1e1e;color:white;}
+  #imagePreview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .preview-item {
+    position: relative;
+    display: inline-block;
+  }
+  .preview-item img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .remove-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  select, input[type=number]{
+    width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.06);background:#0f0f10;color:var(--muted);
+  }
+  fieldset{border:1px solid rgba(255,255,255,.08);border-radius:10px;margin:14px 0 0;padding:4px 12px 12px}
+  legend{color:var(--gold);font-weight:700;font-size:13px;padding:0 6px}
+  .opts{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:6px}
+  .opts label{display:flex;align-items:center;gap:6px;margin:0;font-size:13px;cursor:pointer}
+  .opts input{width:auto;margin:0}
+  .hidden{display:none}
+  .btn[disabled]{opacity:.6;cursor:wait}
+  .req-err{outline:1px solid #e25555}
+  @media(max-width:880px){
+    main{grid-template-columns:1fr}
+    .form-card{position:static}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">IE</div>
+    <div>
+      <h1>InnovativeElectronics</h1>
+      <p class="lead">Fill out this form and I'll get back to you with a quote within the same day.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2 style="color:white;margin:0 0 8px">Get a fast, fair offer for your electronics</h2>
+      <p class="muted">We buy Apple products, Samsungs, consoles, cameras, laptops, and more — same-day quotes available!</p>
+
+      <div class="benefits">
+        <div class="chip"><strong>Instant quotes</strong><div class="small">Same-day response guaranteed</div></div>
+        <div class="chip"><strong>Top dollar paid</strong><div class="small">We pay fair and fast</div></div>
+        <div class="chip"><strong>Fast pickup</strong><div class="small">Pickup or drop-off options</div></div>
+        <div class="chip"><strong>Trusted & secure</strong><div class="small">Your info stays private</div></div>
+      </div>
+
+      <h3 style="color:white;margin-top:18px">How it works</h3>
+      <ol style="margin:8px 0 0;padding-left:20px;color:#bfbfbf">
+        <li>Enter your details below</li>
+        <li>We’ll text or email your quote the same day</li>
+        <li>Accept and get paid fast</li>
+      </ol>
+
+      <h3 style="color:white;margin-top:18px">Testimonials</h3>
+      <div class="chip"><strong>“Got paid the same day!”</strong><div class="small">– Jessica M., iPhone 13 seller</div></div>
+      <div class="chip"><strong>“Super easy and quick.”</strong><div class="small">– David R., MacBook seller</div></div>
+      <div class="chip"><strong>“Best offer I got anywhere.”</strong><div class="small">– Aisha K., PS5 seller</div></div>
+    </section>
+
+    <aside class="form-card">
+      <div id="quoteForm">
+        <label>Full name <span class="small">*</span></label>
+        <input type="text" id="name" required placeholder="John Doe" />
+
+        <div class="row">
+          <div>
+            <label>Phone number <span class="small">*</span></label>
+            <input type="tel" id="phone" required placeholder="999-999-9999" />
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" id="email" placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <label>Location</label>
+        <input type="text" id="location" placeholder="City, State" />
+
+        <label>What type of device(s) are you selling? <span class="small">*</span></label>
+        <textarea id="devices" rows="2" placeholder="Example: iPhone 14 Pro Max 256GB, PS5, Canon Camera" required></textarea>
+
+        <fieldset>
+          <legend>Phone details (skip if you're not selling a phone)</legend>
+
+          <label>Is it unlocked?</label>
+          <div class="opts" id="unlockedOpts">
+            <label><input type="radio" name="unlocked" value="Yes"> Yes, unlocked</label>
+            <label><input type="radio" name="unlocked" value="No"> No, carrier locked</label>
+            <label><input type="radio" name="unlocked" value="Not sure"> Not sure</label>
+          </div>
+
+          <div id="carrierWrap" class="hidden">
+            <label>Which carrier is it locked to?</label>
+            <select id="carrier">
+              <option value="">Select carrier…</option>
+              <optgroup label="Major carriers">
+                <option>AT&amp;T</option>
+                <option>Verizon</option>
+                <option>T-Mobile</option>
+                <option>Sprint (now T-Mobile)</option>
+                <option>US Cellular</option>
+              </optgroup>
+              <optgroup label="Prepaid &amp; budget">
+                <option>Cricket Wireless</option>
+                <option>Metro by T-Mobile</option>
+                <option>Boost Mobile</option>
+                <option>Mint Mobile</option>
+                <option>Visible</option>
+                <option>Straight Talk</option>
+                <option>Tracfone</option>
+                <option>Total Wireless</option>
+                <option>Simple Mobile</option>
+                <option>Net10</option>
+                <option>Consumer Cellular</option>
+                <option>Google Fi</option>
+                <option>Ting</option>
+                <option>Red Pocket</option>
+                <option>Page Plus</option>
+                <option>H2O Wireless</option>
+                <option>Lyca Mobile</option>
+                <option>Ultra Mobile</option>
+              </optgroup>
+              <optgroup label="Cable providers">
+                <option>Xfinity Mobile</option>
+                <option>Spectrum Mobile</option>
+                <option>Cox Mobile</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option>Other</option>
+                <option>Not sure</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <label>Is it cracked?</label>
+          <div class="opts">
+            <label><input type="radio" name="cracked" value="No"> No cracks</label>
+            <label><input type="radio" name="cracked" value="Yes"> Yes, it's cracked</label>
+          </div>
+
+          <div id="crackWrap" class="hidden">
+            <label>Where is it cracked? (select all that apply)</label>
+            <div class="opts">
+              <label><input type="checkbox" name="crackLoc" value="Front screen"> Front screen</label>
+              <label><input type="checkbox" name="crackLoc" value="Back glass"> Back glass</label>
+              <label><input type="checkbox" name="crackLoc" value="Camera lens"> Camera lens</label>
+              <label><input type="checkbox" name="crackLoc" value="Frame / sides"> Frame / sides</label>
+            </div>
+          </div>
+
+          <label>Are all parts original?</label>
+          <div class="opts">
+            <label><input type="radio" name="original" value="Yes"> Yes, all original</label>
+            <label><input type="radio" name="original" value="No"> No, something was replaced</label>
+            <label><input type="radio" name="original" value="Not sure"> Not sure</label>
+          </div>
+
+          <div id="partsWrap" class="hidden">
+            <label>Which parts were replaced?</label>
+            <input type="text" id="partsReplaced" placeholder="Example: screen, battery, back glass" />
+          </div>
+
+          <label>Battery capacity / health (%)</label>
+          <input type="number" id="battery" min="1" max="100" inputmode="numeric" placeholder="Example: 87" />
+          <div class="small">iPhone: Settings → Battery → Battery Health &amp; Charging → Maximum Capacity.</div>
+        </fieldset>
+
+        <label>Upload pictures of the device (optional)</label>
+        <input type="file" id="imageUpload" multiple accept="image/*" />
+        <div class="small">Front, back, and any damage. Up to 8 photos.</div>
+        <div id="imagePreview"></div>
+
+        <label>Additional notes</label>
+        <textarea id="notes" rows="3" placeholder="Condition, accessories, or other info..."></textarea>
+
+        <button type="button" id="submitBtn" class="btn">Get My Quote</button>
+        <div id="status" class="status"></div>
+      </div>
+
+      <div style="margin-top:14px;font-size:13px;color:#bdbdbd">
+        <strong>Need help?</strong>
+        <div class="small">Call or text: (951) 376-4778</div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Privacy Policy Section -->
+  <section class="hero" style="margin-top:28px;">
+    <h2 style="color:white;margin:0 0 8px">Privacy Policy</h2>
+    <p class="small" style="color:#bdbdbd;margin-bottom:12px;">Effective Date: October 17, 2025</p>
+
+    <p style="color:#bdbdbd;">At Innovative Electronics, we value your privacy. This Privacy Policy explains how we collect, use, and protect the information you provide when you interact with our services, including through our Meta Lead Ads, website, or Messenger.</p>
+
+    <h3 style="color:white;margin-top:14px">1. Information We Collect</h3>
+    <ul style="color:#bdbdbd;">
+      <li><strong>Contact information:</strong> Name, email address, phone number</li>
+      <li><strong>Device details:</strong> Brand, model, storage, color, condition, IMEI/serial number</li>
+      <li><strong>Photos of items:</strong> Uploaded images of the devices or electronics you want to sell</li>
+      <li><strong>Other information:</strong> Any details you provide in Messenger or forms</li>
+    </ul>
+    <p style="color:#bdbdbd;">We do not collect sensitive personal data such as financial info, social security numbers, or health information.</p>
+
+    <h3 style="color:white;margin-top:14px">2. How We Use Your Information</h3>
+    <ul style="color:#bdbdbd;">
+      <li>Respond to your inquiries about selling electronics</li>
+      <li>Provide cash offers for your devices</li>
+      <li>Schedule pickups or meetings if applicable</li>
+      <li>Improve our services and customer experience</li>
+    </ul>
+    <p style="color:#bdbdbd;">We do not sell, rent, or share your information with third parties for marketing purposes.</p>
+
+    <h3 style="color:white;margin-top:14px">3. Data Storage and Security</h3>
+    <p style="color:#bdbdbd;">
+      We take reasonable measures to protect your information, including secure storage in our CRM and systems and limiting access to authorized personnel only. However, no method of electronic transmission or storage is 100% secure. By providing your information, you acknowledge this risk.
+    </p>
+
+    <h3 style="color:white;margin-top:14px">4. Your Rights</h3>
+    <p style="color:#bdbdbd;">
+      You can request access, corrections, or deletion of your information by contacting us at: <strong>[Insert contact email]</strong>
+    </p>
+
+    <h3 style="color:white;margin-top:14px">5. Third-Party Services</h3>
+    <p style="color:#bdbdbd;">
+      If you submit your information through Meta Lead Ads, the data will be processed in accordance with Meta’s terms and policies. We only use it to provide the services you requested.
+    </p>
+
+    <h3 style="color:white;margin-top:14px">6. Changes to This Policy</h3>
+    <p style="color:#bdbdbd;">
+      We may update this Privacy Policy from time to time. Updates will be posted on this page with an updated “Effective Date.”
+    </p>
+  </section>
+
+  <footer>
+    <div class="small">InnovativeElectronics • Same-day quotes • Trusted by hundreds of local sellers</div>
+  </footer>
+</div>
+
+<script>
+  const MAX_IMAGES = 8;
+  const $ = (id) => document.getElementById(id);
+  const imageUpload = $('imageUpload');
+  const imagePreview = $('imagePreview');
+  const statusBox = $('status');
+  const submitBtn = $('submitBtn');
+  let uploadedImages = [];
+
+  // ---------- Photo previews ----------
+  function renderPreviews() {
+    imagePreview.innerHTML = '';
+    uploadedImages.forEach((file, index) => {
+      const div = document.createElement('div');
+      div.className = 'preview-item';
+      const img = document.createElement('img');
+      img.alt = 'Preview';
+      img.src = URL.createObjectURL(file);
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'remove-btn';
+      btn.dataset.index = index;
+      btn.textContent = '\u00d7';
+      div.append(img, btn);
+      imagePreview.appendChild(div);
+    });
+  }
+  imageUpload.addEventListener('change', (e) => {
+    uploadedImages = uploadedImages.concat(Array.from(e.target.files)).slice(0, MAX_IMAGES);
+    imageUpload.value = '';
+    renderPreviews();
+  });
+  imagePreview.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+      uploadedImages.splice(Number(e.target.dataset.index), 1);
+      renderPreviews();
+    }
+  });
+
+  // ---------- Conditional questions ----------
+  const val = (name) => (document.querySelector('input[name="' + name + '"]:checked') || {}).value || '';
+  document.querySelectorAll('input[name="unlocked"]').forEach(r => r.addEventListener('change', () => {
+    $('carrierWrap').classList.toggle('hidden', val('unlocked') === 'Yes');
+  }));
+  document.querySelectorAll('input[name="cracked"]').forEach(r => r.addEventListener('change', () => {
+    $('crackWrap').classList.toggle('hidden', val('cracked') !== 'Yes');
+  }));
+  document.querySelectorAll('input[name="original"]').forEach(r => r.addEventListener('change', () => {
+    $('partsWrap').classList.toggle('hidden', val('original') !== 'No');
+  }));
+
+  // ---------- Resize photos so the upload stays small ----------
+  function shrink(file, maxSide = 1280, quality = 0.75) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+        const c = document.createElement('canvas');
+        c.width = Math.round(img.width * scale);
+        c.height = Math.round(img.height * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        resolve(c.toDataURL('image/jpeg', quality).split(',')[1]);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('bad image')); };
+      img.src = url;
+    });
+  }
+
+  function showStatus(msg, type) {
+    statusBox.className = 'status ' + type;
+    statusBox.textContent = msg;
+    statusBox.style.display = 'block';
+  }
+
+  // ---------- Submit ----------
+  submitBtn.addEventListener('click', async () => {
+    const name = $('name').value.trim();
+    const phone = $('phone').value.trim();
+    const devices = $('devices').value.trim();
+    [$('name'), $('phone'), $('devices')].forEach(el => el.classList.remove('req-err'));
+    const missing = [['name', name], ['phone', phone], ['devices', devices]].filter(x => !x[1]);
+    if (missing.length) {
+      missing.forEach(x => $(x[0]).classList.add('req-err'));
+      showStatus('Please fill in your name, phone number, and device(s).', 'error');
+      $(missing[0][0]).focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    statusBox.style.display = 'none';
+
+    try {
+      const photos = [];
+      for (const f of uploadedImages) {
+        try { photos.push(await shrink(f)); } catch (_) { /* skip unreadable image */ }
+      }
+      const payload = {
+        name, phone,
+        email: $('email').value.trim(),
+        location: $('location').value.trim(),
+        devices,
+        unlocked: val('unlocked'),
+        carrier: val('unlocked') === 'Yes' ? '' : $('carrier').value,
+        cracked: val('cracked'),
+        crackLocations: Array.from(document.querySelectorAll('input[name="crackLoc"]:checked')).map(c => c.value),
+        allOriginal: val('original'),
+        partsReplaced: val('original') === 'No' ? $('partsReplaced').value.trim() : '',
+        battery: $('battery').value.trim(),
+        notes: $('notes').value.trim(),
+        photos
+      };
+
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Request failed');
+
+      // Success: go to the thank-you page (this is where the Google Ads conversion fires)
+      window.location.href = '/thank-you.html';
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Get My Quote';
+      showStatus('Something went wrong sending your request. Please try again or call/text (951) 376-4778.', 'error');
+    }
+  });
+</script>
+</body>
+</html>
